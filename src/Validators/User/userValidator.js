@@ -11,7 +11,6 @@ const createUserValidation = [
   check("city").not().isEmpty().withMessage("City is required"),
   checkValidation,
 ];
-
 module.exports = {
     createUserValidation,
 };
