@@ -1,7 +1,7 @@
 module.exports = {
   AUTH: {
     OTP: {
-      CODE: Math.floor(100000 + Math.random() * 900000).toString(),
+      CODE: Math.floor(1000 + Math.random() * 9000).toString(),
       EMAIL_MESSAGE: "تم إرسال رمز التحقق إلى البريد الإلكتروني",
       EMAIL_ERROR: "خطأ في إرسال رمز التحقق",
       EMAIL_EXIST: "يرجي المحاوله بعد خمس دقائق",
