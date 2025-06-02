@@ -1,6 +1,6 @@
-const {userProtect , loginUser} = require("./authUser")
+const { sendOtp, verifyOtp } = require("./otpVerification.Controller");
 
 module.exports = {
-    userProtect,
-    loginUser,
-}
+  sendOtp,
+  verifyOtp,
+};

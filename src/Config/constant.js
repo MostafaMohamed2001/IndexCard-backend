@@ -1,23 +1,13 @@
 module.exports = {
-  Support: {
-    email: "email",
-    phone: "phone",
-    address: "address",
-    emergencyNumber: "emergencyNumber",
-    fireBrigade: "fireBrigade",
-  },
-  notificationType: {
-    // accident: "accident",
-    user: "user",
-    emergency: "emergency",
-  },
-  actionType: {
-    accident: "accident",
-    sensorsInfo: "sensorsInfo",
-  },
-  emergencyType: {
-    hospitals: "hospitals",
-    firestations: "firestations",
-    cranes: "cranes",
+  AUTH: {
+    OTP: {
+      CODE: Math.floor(100000 + Math.random() * 900000).toString(),
+      EMAIL_MESSAGE: "تم إرسال رمز التحقق إلى البريد الإلكتروني",
+      EMAIL_ERROR: "خطأ في إرسال رمز التحقق",
+      EMAIL_EXIST: "يرجي المحاوله بعد خمس دقائق",
+      OTP_ERROR: "رمز التحقق غير صالح",
+      USER_CREARTE_ERROR: "خطآ في انشاء المستخدم",
+      VERIFY_SUCCESS: "تم التحقق من المستخدم بنجاح",
+    },
   },
 };

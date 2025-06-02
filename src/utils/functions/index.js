@@ -1,5 +1,5 @@
-const token = require("./jwtSign")
+const generateToken = require("./generateToken")
 
 module.exports = {
-    token
+    generateToken
 }

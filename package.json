@@ -4,8 +4,9 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start:prod": "NODE_ENV=production node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "staging": "NODE_ENV=staging node index.js",
+    "prod": "NODE_ENV=production node index.js"
   },
   "keywords": [],
   "author": "",

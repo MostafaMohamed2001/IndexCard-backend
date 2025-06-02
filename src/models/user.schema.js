@@ -8,8 +8,6 @@ const userSchema = new mongoose.Schema(
       trim: true,
       lowercase: true,
     },
-    otp: String,
-    otpExpires: Date,
   },
   {
     timestamps: true,
