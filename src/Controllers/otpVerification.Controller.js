@@ -1,11 +1,9 @@
 const asyncHandler = require("express-async-handler");
 const jwt = require("jsonwebtoken");
-
 const { AUTH } = require("../Config/constant");
 const ApiError = require("../utils/errors/apiError");
 const sendResponse = require("../utils/res/sendResponse");
 const { sendOtpEmail } = require("../utils/emails/sendMail");
-
 const { OtpModel, UserModel } = require("../models");
 const { generateToken } = require("../utils/functions");
 
@@ -16,7 +14,7 @@ exports.sendOtp = asyncHandler(async (req, res, next) => {
     return next(new ApiError(AUTH.OTP.EMAIL_EXIST, 400));
   }
   const otpDoc = await OtpModel.create({
-    code: AUTH.OTP.CODE,
+    code: AUTH.OTP.generateCode(),
     email,
   });
   if (!otpDoc) {

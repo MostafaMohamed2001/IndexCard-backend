@@ -1,16 +1,23 @@
 const { checkValidation } = require("./../../middlewares");
 const { check } = require("express-validator");
+const { AUTH } = require("../../Config/constant");
 
 const createUserValidation = [
-  check("username").not().isEmpty().withMessage("Username is required"),
-  check("email").isEmail().withMessage("A valid email is required"),
-  check("password").isLength({ min: 8 }).withMessage("Password must be at least 8 characters"),
-  check("phone").not().isEmpty().withMessage("Phone is required"),
-  check("address").not().isEmpty().withMessage("Address is required"),
-  check("boardId").not().isEmpty().withMessage("Board ID is required"),
-  check("city").not().isEmpty().withMessage("City is required"),
+  check("email").isEmail().withMessage(AUTH.VALIDATION.EMAIL_REQUIRED),
   checkValidation,
 ];
+
+const verifyOtpValidation = [
+  check("email").isEmail().withMessage(AUTH.VALIDATION.EMAIL_REQUIRED),
+  check("otp")
+    .isLength({ min: 4, max: 4 })
+    .withMessage(AUTH.VALIDATION.OTP_LENGTH)
+    .isNumeric()
+    .withMessage(AUTH.VALIDATION.OTP_NUMERIC),
+  checkValidation,
+];
+
 module.exports = {
-    createUserValidation,
+  createUserValidation,
+  verifyOtpValidation,
 };
