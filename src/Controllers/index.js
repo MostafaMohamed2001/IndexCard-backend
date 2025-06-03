@@ -1,6 +1,6 @@
-const { sendOtp, verifyOtp } = require("./otpVerification.Controller");
+const { login, verifyOtp } = require("./auth.Controller");
 
 module.exports = {
-  sendOtp,
+  login,
   verifyOtp,
 };

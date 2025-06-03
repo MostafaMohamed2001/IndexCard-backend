@@ -2,7 +2,7 @@ const { checkValidation } = require("./../../middlewares");
 const { check } = require("express-validator");
 const { AUTH } = require("../../Config/constant");
 
-const createUserValidation = [
+const loginValidation = [
   check("email").isEmail().withMessage(AUTH.VALIDATION.EMAIL_REQUIRED),
   checkValidation,
 ];
@@ -18,6 +18,6 @@ const verifyOtpValidation = [
 ];
 
 module.exports = {
-  createUserValidation,
+  loginValidation,
   verifyOtpValidation,
 };

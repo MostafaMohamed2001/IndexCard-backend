@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const {
-  sendOtp,
+  login,
   verifyOtp,
-} = require("../Controllers/otpVerification.Controller");
+} = require("../Controllers/auth.Controller");
 const {
-  createUserValidation,
+  loginValidation,
   verifyOtpValidation,
 } = require("../Validators/User/userValidator");
-router.post("/otp", createUserValidation, sendOtp);
+router.post("/login", loginValidation, login);
 router.post("/verify", verifyOtpValidation, verifyOtp);
 module.exports = router;
